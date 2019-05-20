@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="insuranceApp.policyInformation.home.title">Policy Informations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-policy-information" [routerLink]="['/policy-information/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="insuranceApp.policyInformation.home.createLabel">
+            Create new Policy Information
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="policyInformations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.policyNewOrExisting">Policy New Or Existing</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.policyNoExisting">Policy No Existing</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.insuranceCompanyExisting">Insurance Company Existing</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.dateOfExpireExisting">Date Of Expire Existing</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.idv">Idv</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.ncb">Ncb</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.valueOfVichle">Value Of Vichle</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.purchaseDate">Purchase Date</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.vichleManufComp">Vichle Manuf Comp</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.policyTPA">Policy TPA</span></th>
+            <th><span jhiTranslate="insuranceApp.policyInformation.policyInfoGenKey">Policy Info Gen Key</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let policyInformation of policyInformations ;trackBy: trackId">
+                <td><a [routerLink]="['/policy-information', policyInformation.id, 'view' ]">{{policyInformation.id}}</a></td>
+                <td>{{policyInformation.policyNewOrExisting}}</td>
+                <td>{{policyInformation.policyNoExisting}}</td>
+                <td>{{policyInformation.insuranceCompanyExisting}}</td>
+                <td>{{policyInformation.dateOfExpireExisting | date:'medium'}}</td>
+                <td>{{policyInformation.idv}}</td>
+                <td>{{policyInformation.ncb}}</td>
+                <td>{{policyInformation.valueOfVichle}}</td>
+                <td>{{policyInformation.purchaseDate | date:'medium'}}</td>
+                <td>{{policyInformation.vichleManufComp}}</td>
+                <td>{{policyInformation.policyTPA}}</td>
+                <td>{{policyInformation.policyInfoGenKey}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/policy-information', policyInformation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/policy-information', policyInformation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'policy-information', { outlets: { popup: policyInformation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

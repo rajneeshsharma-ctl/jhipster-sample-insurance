@@ -1,0 +1,22 @@
+{
+  "insuranceApp": {
+    "content": {
+      "home": {
+        "title": "Contents",
+        "createLabel": "नया Content बनाएँ",
+        "createOrEditLabel": "Content बनाएँ या संपादित करें"
+      },
+      "created": "एक नया Content [identifier: {{ param }}] तैयार है",
+      "updated": "एक Content [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Content [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Content [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Content"
+      },
+      "data": "Data",
+      "document": "Document"
+    }
+  }
+}

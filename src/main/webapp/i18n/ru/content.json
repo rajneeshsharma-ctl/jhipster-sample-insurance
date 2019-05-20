@@ -1,0 +1,22 @@
+{
+  "insuranceApp": {
+    "content": {
+      "home": {
+        "title": "Contents",
+        "createLabel": "Создать новый Content",
+        "createOrEditLabel": "Создать или отредактировать Content"
+      },
+      "created": "Новый Content создан с идентификатором {{ param }}",
+      "updated": "Content обновлен с идентификатором {{ param }}",
+      "deleted": "Content удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Content {{ id }}?"
+      },
+      "detail": {
+        "title": "Content"
+      },
+      "data": "Data",
+      "document": "Document"
+    }
+  }
+}

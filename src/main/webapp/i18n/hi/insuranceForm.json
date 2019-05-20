@@ -1,0 +1,32 @@
+{
+  "insuranceApp": {
+    "insuranceForm": {
+      "home": {
+        "title": "InsuranceForms",
+        "createLabel": "नया Insurance Form बनाएँ",
+        "createOrEditLabel": "Insurance Form बनाएँ या संपादित करें"
+      },
+      "created": "एक नया Insurance Form [identifier: {{ param }}] तैयार है",
+      "updated": "एक Insurance Form [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Insurance Form [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Insurance Form [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Insurance Form"
+      },
+      "policiesCategory": "Policies Category",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "city": "City",
+      "pincode": "Pincode",
+      "phoneNumber": "Phone Number",
+      "emailId": "Email Id",
+      "applicationGenKey": "Application Gen Key",
+      "policyInfoGenKey": "Policy Info Gen Key",
+      "document": "Document"
+    }
+  }
+}

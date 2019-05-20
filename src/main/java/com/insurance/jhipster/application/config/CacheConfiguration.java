@@ -43,6 +43,11 @@ public class CacheConfiguration {
             createCache(cm, com.insurance.jhipster.application.domain.User.class.getName());
             createCache(cm, com.insurance.jhipster.application.domain.Authority.class.getName());
             createCache(cm, com.insurance.jhipster.application.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.insurance.jhipster.application.domain.InsuranceForm.class.getName());
+            createCache(cm, com.insurance.jhipster.application.domain.InsuranceForm.class.getName() + ".documents");
+            createCache(cm, com.insurance.jhipster.application.domain.PolicyInformation.class.getName());
+            createCache(cm, com.insurance.jhipster.application.domain.Document.class.getName());
+            createCache(cm, com.insurance.jhipster.application.domain.Content.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

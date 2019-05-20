@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="insuranceApp.document.home.title">Documents</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-document" [routerLink]="['/document/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="insuranceApp.document.home.createLabel">
+            Create new Document
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="documents">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="insuranceApp.document.title">Title</span></th>
+            <th><span jhiTranslate="insuranceApp.document.size">Size</span></th>
+            <th><span jhiTranslate="insuranceApp.document.mimeType">Mime Type</span></th>
+            <th><span jhiTranslate="insuranceApp.document.content">Content</span></th>
+            <th><span jhiTranslate="insuranceApp.document.insuranceForm">Insurance Form</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let document of documents ;trackBy: trackId">
+                <td><a [routerLink]="['/document', document.id, 'view' ]">{{document.id}}</a></td>
+                <td>{{document.title}}</td>
+                <td>{{document.size}}</td>
+                <td>{{document.mimeType}}</td>
+                <td>
+                    <div *ngIf="document.content">
+                        <a [routerLink]="['../content', document.content?.id, 'view' ]" >{{document.content?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="document.insuranceForm">
+                        <a [routerLink]="['../insurance-form', document.insuranceForm?.id, 'view' ]" >{{document.insuranceForm?.applicationGenKey}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/document', document.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/document', document.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'document', { outlets: { popup: document.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

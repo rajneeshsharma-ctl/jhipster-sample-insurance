@@ -1,0 +1,32 @@
+{
+  "insuranceApp": {
+    "policyInformation": {
+      "home": {
+        "title": "PolicyInformations",
+        "createLabel": "नया Policy Information बनाएँ",
+        "createOrEditLabel": "Policy Information बनाएँ या संपादित करें"
+      },
+      "created": "एक नया Policy Information [identifier: {{ param }}] तैयार है",
+      "updated": "एक Policy Information [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Policy Information [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Policy Information [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Policy Information"
+      },
+      "policyNewOrExisting": "Policy New Or Existing",
+      "policyNoExisting": "Policy No Existing",
+      "insuranceCompanyExisting": "Insurance Company Existing",
+      "dateOfExpireExisting": "Date Of Expire Existing",
+      "idv": "Idv",
+      "ncb": "Ncb",
+      "valueOfVichle": "Value Of Vichle",
+      "purchaseDate": "Purchase Date",
+      "vichleManufComp": "Vichle Manuf Comp",
+      "policyTPA": "Policy TPA",
+      "policyInfoGenKey": "Policy Info Gen Key",
+      "insuranceForm": "Insurance Form"
+    }
+  }
+}

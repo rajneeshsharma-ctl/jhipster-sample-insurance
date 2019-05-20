@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="policyInformation">
+            <h2><span jhiTranslate="insuranceApp.policyInformation.detail.title">Policy Information</span> {{policyInformation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="insuranceApp.policyInformation.policyNewOrExisting">Policy New Or Existing</span></dt>
+                <dd>
+                    <span>{{policyInformation.policyNewOrExisting}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.policyNoExisting">Policy No Existing</span></dt>
+                <dd>
+                    <span>{{policyInformation.policyNoExisting}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.insuranceCompanyExisting">Insurance Company Existing</span></dt>
+                <dd>
+                    <span>{{policyInformation.insuranceCompanyExisting}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.dateOfExpireExisting">Date Of Expire Existing</span></dt>
+                <dd>
+                    <span>{{policyInformation.dateOfExpireExisting}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.idv">Idv</span></dt>
+                <dd>
+                    <span>{{policyInformation.idv}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.ncb">Ncb</span></dt>
+                <dd>
+                    <span>{{policyInformation.ncb}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.valueOfVichle">Value Of Vichle</span></dt>
+                <dd>
+                    <span>{{policyInformation.valueOfVichle}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.purchaseDate">Purchase Date</span></dt>
+                <dd>
+                    <span>{{policyInformation.purchaseDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.vichleManufComp">Vichle Manuf Comp</span></dt>
+                <dd>
+                    <span>{{policyInformation.vichleManufComp}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.policyTPA">Policy TPA</span></dt>
+                <dd>
+                    <span>{{policyInformation.policyTPA}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.policyInformation.policyInfoGenKey">Policy Info Gen Key</span></dt>
+                <dd>
+                    <span>{{policyInformation.policyInfoGenKey}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/policy-information', policyInformation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "insuranceApp": {
+    "policyInformation": {
+      "home": {
+        "title": "Policy Informations",
+        "createLabel": "Create a new Policy Information",
+        "createOrEditLabel": "Create or edit a Policy Information"
+      },
+      "created": "A new Policy Information is created with identifier {{ param }}",
+      "updated": "A Policy Information is updated with identifier {{ param }}",
+      "deleted": "A Policy Information is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Policy Information {{ id }}?"
+      },
+      "detail": {
+        "title": "Policy Information"
+      },
+      "policyNewOrExisting": "Policy New Or Existing",
+      "policyNoExisting": "Policy No Existing",
+      "insuranceCompanyExisting": "Insurance Company Existing",
+      "dateOfExpireExisting": "Date Of Expire Existing",
+      "idv": "Idv",
+      "ncb": "Ncb",
+      "valueOfVichle": "Value Of Vichle",
+      "purchaseDate": "Purchase Date",
+      "vichleManufComp": "Vichle Manuf Comp",
+      "policyTPA": "Policy TPA",
+      "policyInfoGenKey": "Policy Info Gen Key",
+      "insuranceForm": "Insurance Form"
+    }
+  }
+}

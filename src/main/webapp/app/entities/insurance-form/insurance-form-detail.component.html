@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="insuranceForm">
+            <h2><span jhiTranslate="insuranceApp.insuranceForm.detail.title">Insurance Form</span> {{insuranceForm.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.policiesCategory">Policies Category</span></dt>
+                <dd>
+                    <span>{{insuranceForm.policiesCategory}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{insuranceForm.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.middleName">Middle Name</span></dt>
+                <dd>
+                    <span>{{insuranceForm.middleName}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{insuranceForm.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.address">Address</span></dt>
+                <dd>
+                    <span>{{insuranceForm.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.city">City</span></dt>
+                <dd>
+                    <span>{{insuranceForm.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.pincode">Pincode</span></dt>
+                <dd>
+                    <span>{{insuranceForm.pincode}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{insuranceForm.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.emailId">Email Id</span></dt>
+                <dd>
+                    <span>{{insuranceForm.emailId}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.applicationGenKey">Application Gen Key</span></dt>
+                <dd>
+                    <span>{{insuranceForm.applicationGenKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="insuranceApp.insuranceForm.policyInfoGenKey">Policy Info Gen Key</span></dt>
+                <dd>
+                    <div *ngIf="insuranceForm.policyInfoGenKey">
+                        <a [routerLink]="['/policy-information', insuranceForm.policyInfoGenKey?.id, 'view']">{{insuranceForm.policyInfoGenKey?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/insurance-form', insuranceForm.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

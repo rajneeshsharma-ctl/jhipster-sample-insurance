@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-policy-information-heading" jhiTranslate="insuranceApp.policyInformation.home.createOrEditLabel">Create or edit a Policy Information</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!policyInformation.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.policyNewOrExisting" for="field_policyNewOrExisting">Policy New Or Existing</label>
+                    <input type="checkbox" class="form-control" name="policyNewOrExisting" id="field_policyNewOrExisting"
+                           formControlName="policyNewOrExisting"/>
+                    <div *ngIf="editForm.get('policyNewOrExisting').invalid && (editForm.get('policyNewOrExisting').dirty || editForm.get('policyNewOrExisting').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('policyNewOrExisting').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.policyNoExisting" for="field_policyNoExisting">Policy No Existing</label>
+                    <input type="text" class="form-control" name="policyNoExisting" id="field_policyNoExisting"
+                           formControlName="policyNoExisting"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.insuranceCompanyExisting" for="field_insuranceCompanyExisting">Insurance Company Existing</label>
+                    <input type="number" class="form-control" name="insuranceCompanyExisting" id="field_insuranceCompanyExisting"
+                           formControlName="insuranceCompanyExisting"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.dateOfExpireExisting" for="field_dateOfExpireExisting">Date Of Expire Existing</label>
+                    <div class="d-flex">
+                        <input id="field_dateOfExpireExisting" type="datetime-local" class="form-control" name="dateOfExpireExisting" formControlName="dateOfExpireExisting" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.idv" for="field_idv">Idv</label>
+                    <input type="text" class="form-control" name="idv" id="field_idv"
+                           formControlName="idv"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.ncb" for="field_ncb">Ncb</label>
+                    <input type="text" class="form-control" name="ncb" id="field_ncb"
+                           formControlName="ncb"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.valueOfVichle" for="field_valueOfVichle">Value Of Vichle</label>
+                    <input type="number" class="form-control" name="valueOfVichle" id="field_valueOfVichle"
+                           formControlName="valueOfVichle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.purchaseDate" for="field_purchaseDate">Purchase Date</label>
+                    <div class="d-flex">
+                        <input id="field_purchaseDate" type="datetime-local" class="form-control" name="purchaseDate" formControlName="purchaseDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.vichleManufComp" for="field_vichleManufComp">Vichle Manuf Comp</label>
+                    <input type="text" class="form-control" name="vichleManufComp" id="field_vichleManufComp"
+                           formControlName="vichleManufComp"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.policyTPA" for="field_policyTPA">Policy TPA</label>
+                    <input type="text" class="form-control" name="policyTPA" id="field_policyTPA"
+                           formControlName="policyTPA"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="insuranceApp.policyInformation.policyInfoGenKey" for="field_policyInfoGenKey">Policy Info Gen Key</label>
+                    <input type="number" class="form-control" name="policyInfoGenKey" id="field_policyInfoGenKey"
+                           formControlName="policyInfoGenKey"/>
+                    <div *ngIf="editForm.get('policyInfoGenKey').invalid && (editForm.get('policyInfoGenKey').dirty || editForm.get('policyInfoGenKey').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('policyInfoGenKey').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('policyInfoGenKey')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div *ngIf="editForm.get('insuranceForm').invalid && (editForm.get('insuranceForm').dirty || editForm.get('insuranceForm').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('insuranceForm').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

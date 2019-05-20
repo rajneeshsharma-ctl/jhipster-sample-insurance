@@ -1,0 +1,32 @@
+{
+  "insuranceApp": {
+    "insuranceForm": {
+      "home": {
+        "title": "Insurance Forms",
+        "createLabel": "Создать новый Insurance Form",
+        "createOrEditLabel": "Создать или отредактировать Insurance Form"
+      },
+      "created": "Новый Insurance Form создан с идентификатором {{ param }}",
+      "updated": "Insurance Form обновлен с идентификатором {{ param }}",
+      "deleted": "Insurance Form удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Insurance Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Insurance Form"
+      },
+      "policiesCategory": "Policies Category",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "city": "City",
+      "pincode": "Pincode",
+      "phoneNumber": "Phone Number",
+      "emailId": "Email Id",
+      "applicationGenKey": "Application Gen Key",
+      "policyInfoGenKey": "Policy Info Gen Key",
+      "document": "Document"
+    }
+  }
+}
